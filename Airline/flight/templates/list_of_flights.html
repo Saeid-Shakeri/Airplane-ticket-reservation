@@ -1,0 +1,13 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Flights</title>
+</head>
+<body>
+    
+{% for t in all_flights %}
+    <p> {{t.id}}))   {{ t.way }}....... Airplane:  {{t.airplane}}....... Airline: {{t.airplane.airline}} </p>
+    <p>....... Seats: {{t.seats}}....... remaining: {{t.remaining}}</p>
+{% endfor %}
+</body>
+</html>
