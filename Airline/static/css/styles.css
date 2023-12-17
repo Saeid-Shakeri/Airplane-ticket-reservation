@@ -1,0 +1,25 @@
+
+    ul li{
+        display:inline-block;
+        font-size: x-large;
+}
+.img-with-text {
+    text-align: justify;
+    width: [width of img];
+}
+
+
+button {
+background-color: #04AA6D; /* Green */
+border: none;
+color: white;
+padding: 20px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+margin: 100px 100px;
+cursor: pointer;
+box-shadow: 0 9px #999;
+border-radius: 15px;
+font-size: 20px;
+}

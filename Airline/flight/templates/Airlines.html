@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>All Airlines</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    
+        
+	
+</head>
+<body>
+  
+
+
+    <ul>
+    {% for t in all_airlines %}
+    
+     
+     <li><figure><img src=" {{t.Logo.url}}" width="200" height="200" >
+        <figcaption align="center">{{t.name}}</figcaption>
+        </figure></li>
+     
+   
+    {% endfor %}
+</ul>
+</body>
+</html>
+

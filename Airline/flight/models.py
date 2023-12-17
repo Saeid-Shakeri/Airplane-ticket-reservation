@@ -13,7 +13,7 @@ class Way(models.Model):
 class Airline(models.Model):
     name = models.CharField(max_length=30)
     phone = models.CharField(max_length=15)
-    Logo = models.ImageField(null=True,blank=True)
+    Logo = models.ImageField(null=True,blank=True,upload_to='logo/')
 
 
     
