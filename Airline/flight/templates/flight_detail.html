@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>way: {{ object.way }}</p>
+<p>Date: {{ object.date|date:"y/m/d" }}</p>
+<p>time: {{ object.time }}</p>
+<p>price per ticket: {{ object.price }}$</p>
+<p>Cancellation penalty percentage: {{object.cancel_percent}}%</p>
+{% if object.remining == 0 %}
+    <p> no ticket remining</p>
+{% else %}
+    <p>remaining: {{object.remaining}}</p>
+{% endif %}
+
+<p>Airplane: {{object.airplane}}</p>
+<p>AirLine: <a href="{% url 'airline_detail' object.airplane.airline.id %}">{{ object.airplane.airline }} </a></p>
+<p><img src=" {{object.airplane.airline.logo.url}}" </p>
+
+
+</body>
+</html>

@@ -1,27 +1,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>index page</title>
+    <title>All Flights</title>
 </head>
 <body>
     
-{% for t in all_flights %}
+    <p><a href="{% url 'flight_list' %}">Flights</a></p>   
+     <p><a href="{% url 'search' %}">Search By</a></p>
 
-    <p> {{t.id}}))   {{ t.way }}....... Airplane:  {{t.airplane}}....... Airline: {{t.airplane.airline}} </p>
-    <p>....... Seats: {{t.seats}}....... remaining: {{t.remaining}}
-          
-        
-        
 
-        {% if t.airplane.airline.Logo %}
-        
-<p></p>
-            <img src= " {{t.airplane.airline.Logo.url}}">
 
-          {% endif %}
-    </p>
-    
-{% endfor %}
+
 
 </body>
 </html>

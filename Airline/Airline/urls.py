@@ -22,10 +22,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Flight/',include('flight.urls'))
+    path('',include('flight.urls')),
+    path('customer/',include('customer.urls'))
 ]
-
-
 
 if settings.DEBUG: 
     urlpatterns += static(settings.MEDIA_URL,
