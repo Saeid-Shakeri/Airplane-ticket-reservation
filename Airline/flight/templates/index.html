@@ -2,11 +2,18 @@
 <head>
     <meta charset="UTF-8">
     <title>All Flights</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{{ STATIC_URL }}styles.css">
+
 </head>
 <body>
+  
     
     <p><a href="{% url 'flight_list' %}">Flights</a></p>   
      <p><a href="{% url 'search' %}">Search By</a></p>
+     <p><a href="{% url 'search' %}"></a></p>
+
+     <img src="{% static 'images/index.jpg' %}"  width="100%" height="500rem">
 
 
 

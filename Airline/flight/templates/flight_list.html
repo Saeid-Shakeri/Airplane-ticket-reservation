@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>flight list</title>
 </head>
 <body>
-{% for t in object_list %}
-    <p><a href="{% url 'flight_detail' t.id %}">{{ t.way }} </a></p>
+{% for t in flight_list %}
+    <p><a href="{% url 'flight_detail' t.id %}">{{ t.way }}...{{t.airplane.airline}} </a></p>
 {% endfor %}
 </body>
 </html>
