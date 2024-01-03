@@ -9,6 +9,9 @@ from django.contrib.auth import authenticate,login
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import authenticate, login, logout
 from flight.models import Flight
+import logging
+logger = logging.getLogger(__name__)
+
 
 
 
@@ -20,6 +23,7 @@ class register(View):
          return render(request, "register.html", {"form":form})
 
     def post(self, request):
+         lo
          form = UserForm(request.POST)
          if form.is_valid():
              form.cleaned_data["is_active"] = False
@@ -111,6 +115,7 @@ class Cancel(LoginRequiredMixin,View):
         flight = Flight.objects.get(id=tic.ticket.fly.id)
         flight.remaining += n
         flight.save()
+        logger.warning(f'user: {user} is canceld his ticket. order id:{tic.id} ')
         return HttpResponse(template.render({'user':user,'ticket':tic}, request))
 
 
