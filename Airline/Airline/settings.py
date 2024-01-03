@@ -173,11 +173,11 @@ LOGGING = {
     },
     "loggers":{
         "customer.views":{
-            "handlers": ["console"],
+            "handlers": ["file"],
             "level": "DEBUG",
         },
         "flight.views":{
-            "handlers": ["console"],
+            "handlers": ["file"],
             "level": "DEBUG",
         },
         "file_logger":{
