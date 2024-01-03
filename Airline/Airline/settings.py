@@ -50,6 +50,7 @@ STATICFILES_DIRS = [
 ]
 
 
+LOGIN_URL = 'login'
 
 
 
@@ -144,3 +145,60 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "customer.Customer"
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+        "file": {
+            "level": "WARNING",
+            "class": "logging.FileHandler",
+            "filename": "warning.log",
+            "formatter": "verbose",
+        },
+        "mail_admins": {
+            "level": "ERROR",
+            "class": "django.utils.log.AdminEmailHandler",
+        },
+    },
+    "loggers":{
+        "customer.views":{
+            "handlers": ["console"],
+            "level": "DEBUG",
+        },
+        "flight.views":{
+            "handlers": ["console"],
+            "level": "DEBUG",
+        },
+        "file_logger":{
+            "handlers": ["file"],
+        },
+        "email_logger":{
+            "handlers": ["mail_admins"],
+        }
+    }
+}
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.yahoo.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
+
+SESSION_COOKIE_AGE = 3600
+
