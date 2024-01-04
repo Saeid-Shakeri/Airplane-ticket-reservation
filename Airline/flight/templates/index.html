@@ -1,19 +1,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>All Flights</title>
+    <title>index page</title>
     {% load static %} 
-    <link rel="stylesheet" href="{{ STATIC_URL }}styles.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
 
 </head>
-<body>
+<body id="medium">
   
     
-    <p><a href="{% url 'flight_list' %}">Flights</a></p>   
-     <p><a href="{% url 'search' %}">Search By</a></p>
-     <p><a href="{% url 'search' %}"></a></p>
 
-     <img src="{% static 'images/index.jpg' %}"  width="100%" height="500rem">
+<div id="main">
+    <div>    <p><a href="{% url 'flight_list' %}">Flights</a></p>  </div>
+    <div><p><a href="{% url 'search' %}">Search By</a></p></div>
+    <div><p><a href="http://127.0.0.1:8000/customer/"> Profile Page</a></p></div>
+    
+    </div>
+
+    
+     
+
 
 
 

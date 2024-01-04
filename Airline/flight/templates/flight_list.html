@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>flight list</title>
+    <title>Flight List</title>
+    {% load static %} 
+    <link rel="stylesheet" href="../static/css/styles.css">
+
 </head>
 <body>
 {% for t in flight_list %}
-    <p><a href="{% url 'flight_detail' t.id %}">{{ t.way }}...{{t.airplane.airline}} </a></p>
+    <p><a href="{% url 'flight_detail' t.id %}">{{ t.way }}-{{t.airplane.airline}} </a></p>
 {% endfor %}
 </body>
 </html>

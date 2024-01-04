@@ -85,13 +85,13 @@ class Search(View):
          form = SearchFrom()
          return render(request, "search.html", {"form":form})
 
-    def post(self, request):
-           try:       
-                flight = Flight.objects.filter(way=request.POST["way"],date=request.POST["date"])
-                return render(request, "flight_list.html", {"flight_list":flight})
+    def post(self, request):       
+        flight = Flight.objects.filter(way=request.POST["way"],date=request.POST["date"])
+        if flight.exists():
+            return render(request, "flight_list.html", {"flight_list":flight})
 
-           except:
-                return HttpResponse("this flight dosent exist!")
+        else:
+            return HttpResponse("This flight dosent exist!")
 
 
 

@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Flight Detail</title>
+    {% load static %} 
+    <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
-<body>
-<p>way: {{ object.way }}</p>
+<body id="large">
+<p>Way: {{ object.way }}</p>
 <p>Date: {{ object.date|date:"y/m/d" }}</p>
 <p>time: {{ object.time }}</p>
 <p>price per ticket: {{ object.price }}$</p>
@@ -23,7 +25,7 @@
 
 
 <a href="{% url 'ticket' object.id %}">
-    <input type="submit" value="Book Ticket"> </a>
+    <button type="submit" >Book Ticket</button> </a>
 
 
 
