@@ -23,7 +23,6 @@ class register(View):
          return render(request, "register.html", {"form":form})
 
     def post(self, request):
-         lo
          form = UserForm(request.POST)
          if form.is_valid():
              form.cleaned_data["is_active"] = False
@@ -41,7 +40,7 @@ class Login(View):
         return HttpResponse(template.render({}, request))
 
     def post(self, request, *args, **kwargs):
-        user = authenticate(username=request.POST["username"], password=request.POST["password"])
+        user = authenticate(username=request.POST.get("username"), password=request.POST.get("password"))
         if user:
             login(request, user)
             message = "Login successful!"
@@ -80,6 +79,14 @@ class OrderList(ListView):
     model = order
     template_name = "order_list.html"
 
+   
+    def get(self,request):
+        user =Customer.objects.get(pk=request.user.id) 
+        q =  order.objects.filter(customer=user)
+        if q.exists():
+            template = loader.get_template("order_list.html")
+            return HttpResponse(template.render({'object_list': q}))
+        else : return HttpResponse("You haven't any order!")
 
 
 class OrderDetail(DetailView):

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    {% load static %} 
+    <link rel="stylesheet" href="../static/css/styles.css">
+
+</head>
+<body>
+    <div id="main">
+<div>
+    <p>Username: {{ object.username }}</p>
+<p>Phone: {{ object.phone }}</p>
+<p>First name: {{ object.first_name }}</p>
+<p>Last name: {{ object.last_name }}</p>
+Email: {{ object.email }}
+</p>
+</div>
+<div><a href="{% url 'order_list' %}"><button>Your Orders </button></a></div>
+    
+
+
+</body>
+</html>

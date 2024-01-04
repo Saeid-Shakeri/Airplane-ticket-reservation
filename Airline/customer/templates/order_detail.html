@@ -2,15 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>order</title>
+    <title>Title</title>
 </head>
 <body>
-<p>{{ object.customer }}</p>
-<p>{{ object.number }}</p>
-<p>{{ object.date_time }}</p>
-<p>{{ object.ticket }}</p>
-<p>{{ object.status }}</p>
-<p>{{ object.number * object.ticket.fly.price }}</p>
+<p> {{ object.ticket }}</p>
+<p>Datetime: {{ object.date_time|date:"y/m/d" }}</p>
+<p>number: {{ object.number }}</p>
+
+<p>status: {{object.status}}</p>
+
+
+
+          {% if object.status == "check" %}
+          
+            <a href="{% url 'payment' object.id %}">
+                    <input type="submit" value="Pay"> </a>
+          {% elif object.status == "paid" %}
+
+          <a href="{% url 'cancel' object.id %}">
+            <input type="submit" value="Cancel"> </a>   
+            {% elif object.status == "canceld" %}
+
+            <p> cancel percent: {{ object.ticket.fly.cancel_percent}}</p>
+            <a href="{% url 'payment' object.id %}">
+              <input type="submit" value="Pay"> </a>
+                 
+
+
+          {% endif %}
+
+
+
+
 
 
 </body>

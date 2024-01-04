@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    {% load static %} 
+    <link rel="stylesheet" href="../../static/css/styles.css">
+
+    <style>
+        
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  </style>
 </head>
 <body>
-    <form action="" method="post">
+    <div>
+    <form action="" method="post" id="large">
         {% csrf_token %}
-        <p>Username:<input name="username" type="text"></p>
-        <p>Password:<input name="password" type="password"></p>
-        <p><input type="submit" value="Login"></p>
+        <label for="fname">Username:</label>
+        <input type="text" id="fname" name="username" placeholder="Your Username...">
+        <p></p>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Your Password...">
+
+        <p><input type="submit" value="Login" id="large" > </p>
+        <p>Dont have an account? <a href="{% url 'register' %}">Create One</a> </p>
         <p>{{ message }}</p>
 </form>
+    </div>
 </body>
 </html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+</head>
+<body>
+    <p>Way ............................... Airplane...........................................
+        Date...............seat number............status</p>
+    {% for t in object_list %}
+    <p><a href="{% url 'order_detail' t.id %}">{{ t.ticket }}....................{{t.status}} </a></p>
+{% endfor %}
+</body>
+</html>
