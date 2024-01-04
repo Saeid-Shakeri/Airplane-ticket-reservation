@@ -1,12 +1,107 @@
+#smal{
+    font-size: 10px;
 
-    ul li{
-        display:inline-block;
-        font-size: x-large;
 }
-.img-with-text {
-    text-align: justify;
-    width: [width of img];
+
+#medium{
+    font-size: 15px;
+
+
 }
+
+#large{
+    font-size: 20px;
+
+}
+
+a:link {
+    color: rgb(10, 2, 29);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: rgb(192, 23, 136);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgb(31, 182, 174);
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+
+
+
+#main {
+ 
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  input[type=text], select {
+    width: 100%;
+
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  
+  input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  
+  input[type=password], select {
+    width: 100%;
+
+
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+ 
+  
+  input[type=submit]:hover {
+    width: 100%;
+
+    background-color: #45a049;
+  }
 
 
 button {
