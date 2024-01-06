@@ -6,9 +6,10 @@
 </head>
 <body>
     <p>Way ............................... Airplane...........................................
-        Date...............seat number............status</p>
+        Date...............id & seat number............status</p>
     {% for t in object_list %}
-    <p><a href="{% url 'order_detail' t.id %}">{{ t.ticket }}....................{{t.status}} </a></p>
+    <p><a href="{% url 'order_detail' t.id %}">{{t.ticket.fly}}...................{{ t.ticket }}
+        ....................{{t.status}} </a></p>
 {% endfor %}
 </body>
 </html>

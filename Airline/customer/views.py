@@ -81,7 +81,7 @@ class OrderList(ListView):
 
    
     def get(self,request):
-        user =Customer.objects.get(pk=request.user.id) 
+        user = Customer.objects.get(pk=request.user.id) 
         q =  order.objects.filter(customer=user)
         if q.exists():
             template = loader.get_template("order_list.html")
@@ -97,33 +97,39 @@ class OrderDetail(DetailView):
 
 class Payment(LoginRequiredMixin,View):
      def get(self,request,*args, **kwargs):
-        user = Customer.objects.get( pk= request.user.id)
-        tic = order.objects.get(pk=kwargs['pk'])
-        n = tic.number
-        template = loader.get_template('payment.html')
-        tic.status='paid'
+        user = Customer.objects.get(pk=request.user.id)
+        ord = order.objects.get(pk=kwargs['pk'])
+        tic = ord.ticket
+        tic.status = 'paid'
         tic.save()
-        flight = Flight.objects.get(id=tic.ticket.fly.id)
+        n = ord.number
+        template = loader.get_template('payment.html')
+        ord.status='paid'
+        ord.save()
+        flight = Flight.objects.get(id=ord.ticket.fly.id)
         flight.remaining -= n
         flight.save()
 
-        return HttpResponse(template.render({'user':user,'ticket':tic}, request))
+        return HttpResponse(template.render({'user':user,'ticket':ord}, request))
 
 
 
 class Cancel(LoginRequiredMixin,View):
     def get(self,request,*args, **kwargs):
         user = Customer.objects.get( pk= request.user.id)
-        tic = order.objects.get(pk=kwargs['pk'])
-        n = tic.number
-        template = loader.get_template('payment.html')
-        tic.status='canceld'
+        ord = order.objects.get(pk=kwargs['pk'])
+        tic = ord.ticket
+        tic.status = 'canceld'
         tic.save()
-        flight = Flight.objects.get(id=tic.ticket.fly.id)
+        n = ord.number
+        template = loader.get_template('payment.html')
+        ord.status='canceld'
+        ord.save()
+        flight = Flight.objects.get(id=ord.ticket.fly.id)
         flight.remaining += n
         flight.save()
-        logger.warning(f'user: {user} is canceld his ticket. order id:{tic.id} ')
-        return HttpResponse(template.render({'user':user,'ticket':tic}, request))
+        logger.warning(f'user: {user} is canceld his ticket. order id:{ord.id} ')
+        return HttpResponse(template.render({'user':user,'ticket':ord}, request))
 
 
 
