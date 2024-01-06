@@ -9,7 +9,7 @@
          {% csrf_token %}
 
          <select id="id_customer" name="customer">
-            {% for x in ticket_list %}
+           {% for x in ticket_list %}
               <option value="{{ x }}">{{x}}</option>
                 
 
@@ -21,6 +21,5 @@
       <input type="submit" value="Book">
 
     </form>
-    </center>
 </body>
 </html>
