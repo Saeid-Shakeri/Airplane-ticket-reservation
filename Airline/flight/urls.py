@@ -13,6 +13,10 @@ urlpatterns = [
        path('airline/<int:pk>/',views.AirlineDetail.as_view(),name="airline_detail"),
        path('search/',views.Search.as_view(),name="search"),
        path('<int:pk>/ticket/',views.Ticket_view.as_view(),name="ticket"),
+       path('flight/orderby_price/',views.CheapestFlights.as_view(),name="order_by_price"),
+ 
+
+
      
 
 

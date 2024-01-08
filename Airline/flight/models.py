@@ -1,4 +1,5 @@
 from django.db import models
+from .Managers import *
 
 class Way(models.Model):
     origion = models.CharField(max_length=30)
@@ -35,12 +36,14 @@ class Airplane(models.Model):
 class Flight(models.Model):
     date = models.DateField()
     time = models.TimeField()
-    price = models.IntegerField()
+    price = models.PositiveSmallIntegerField()
     seats = models.IntegerField(help_text='The number of seats') 
-    remaining = models.IntegerField(help_text='Remaining tickets')
-    cancel_percent = models.SmallIntegerField(help_text='Cancellation penalty percentage',default=0) #Cancellation penalty percentage
+    remaining = models.PositiveSmallIntegerField(help_text='Remaining tickets')
+    cancel_percent = models.PositiveSmallIntegerField(help_text='Cancellation penalty percentage',default=0) #Cancellation penalty percentage
     way = models.ForeignKey(Way,on_delete= models.CASCADE)
     airplane = models.ForeignKey(Airplane,on_delete=models.CASCADE)
+
+    objects = FlightManager()
 
     
     def __str__(self) -> str:

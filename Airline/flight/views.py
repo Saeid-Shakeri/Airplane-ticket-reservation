@@ -10,6 +10,8 @@ from customer.models import order,Ticket
 from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 import logging
+logger = logging.getLogger(__name__)
+
 
 
 
@@ -55,18 +57,24 @@ class FlightDetail(DetailView):
 class Ticket_view(LoginRequiredMixin,View):
 
     def get(self, request,pk):
-         
+         message=''
          form = TicketForm()
          tic = Ticket.objects.filter(fly=pk).exclude(status="paid")
-         return render(request, "ticket.html", {"form":form, "ticket_list":tic})
+         return render(request, "ticket.html", {"form":form, "ticket_list":tic,'message': message})
 
 
     def post(self, request,*args, **kwargs):
-           tic = Ticket.objects.get(unique_id=request.POST['unique_id'])
-           if(order.create(self,customer=request.user,tic=tic)):
-               return HttpResponse("Added to your shopping cart")
-        
-           else : return HttpResponse("Something went wrong")
+            try:
+                tic = Ticket.objects.get(unique_id=request.POST['unique_id'],seat_number=request.POST['seat_number'])
+            except:
+                return HttpResponse("You entered something wrong")
+
+            if(order.create(self,customer=request.user,tic=tic)):
+                message = "Added to your shopping cart"
+                template = loader.get_template('ticket.html')
+                return HttpResponse(template.render({'message': message}, request))
+
+            else : return HttpResponse("Something went wrong")
            
 
            
@@ -94,6 +102,11 @@ class Search(View):
             return HttpResponse("This flight dosent exist!")
 
 
+class CheapestFlights(View):
+
+    def get(self, request):
+        query = Flight.objects.cheapest()
+        return render(request, "orderby_price.html", {"flight_list":query})
 
 
 

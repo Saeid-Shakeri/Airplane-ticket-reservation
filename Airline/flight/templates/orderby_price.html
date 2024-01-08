@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flight List</title>
+    <title>Order by Price</title>
     {% load static %} 
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../../static/css/styles.css">
 
 </head>
-<body id="large">
-    <div><p><a href="{% url 'order_by_price' %}"><button class="button2">Order By Price</button></a></p></div>
+<body  id="large">
+    
 
 {% for t in flight_list %}
     <p><a href="{% url 'flight_detail' t.id %}">{{ t.way }}-{{t.airplane.airline}} </a></p>
 {% endfor %}
-    
 
 
 </body>

@@ -7,7 +7,7 @@
 <body>
     <form action="" method="post">
          {% csrf_token %}
-
+        {% if message == "" %}
          <select id="id_customer" name="customer">
            {% for x in ticket_list %}
               <option value="{{ x }}">{{x}}</option>
@@ -19,7 +19,13 @@
          
    
       <input type="submit" value="Book">
-
+          
     </form>
+    {{else}}
+{{message}}
+<div><p><a href="http://127.0.0.1:8000/customer/order"><button class="button3">Do You Want To Continue?
+</button> </a></p>
+{% endif %}
+
 </body>
 </html>
