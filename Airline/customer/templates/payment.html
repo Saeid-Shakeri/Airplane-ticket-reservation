@@ -13,7 +13,9 @@
 <p>{{ ticket.date_time}}</p>
 <p>{{ ticket.status}}</p>
 <p>{{ ticket.ticket}}</p>
-
+{% if value != "-1" %}
+<p>price which back to you: {{value}}
+{%endif%}
 
 
 </body>

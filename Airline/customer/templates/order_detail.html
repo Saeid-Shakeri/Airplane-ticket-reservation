@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../../../static/js/scripts.js"></script>
+  
 </head>
 <body>
 <p> {{ object.ticket }}</p>
@@ -10,6 +12,7 @@
 <p>number: {{ object.number }}</p>
 
 <p>status: {{object.status}}</p>
+<p>price: {{object.ticket.fly.price}}</p>
 
 
 
@@ -19,11 +22,12 @@
                     <input type="submit" value="Pay"> </a>
           {% elif object.status == "paid" %}
 
-          <a href="{% url 'cancel' object.id %}">
+          <a href="{% url 'cancel' object.id %}" onclick="return deletechecked();">
             <input type="submit" value="Cancel"> </a>   
             {% elif object.status == "canceld" %}
 
             <p> cancel percent: {{ object.ticket.fly.cancel_percent}}</p>
+            
             <a href="{% url 'payment' object.id %}">
               <input type="submit" value="Pay"> </a>
                  

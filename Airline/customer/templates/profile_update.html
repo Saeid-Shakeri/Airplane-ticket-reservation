@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Update Profile</title>
+      
+    <style>
+        
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+          }
+          </style>
+    </head>
+
+<body>
+    <div>
+     <form action="" method="post" >
+            {% csrf_token %}
+             {{ form.as_p }}
+   
+          <input type="submit" value="Save">
+
+      </form>
+    </div>
+</body>
+</html>

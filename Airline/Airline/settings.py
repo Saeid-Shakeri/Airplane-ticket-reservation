@@ -105,12 +105,12 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
+#    {
+     #   'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+   # },
+   # {
+      #  'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+   # },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
@@ -159,6 +159,12 @@ LOGGING = {
     "handlers": {
         "console": {
             "class": "logging.StreamHandler",
+        },
+        "file": {
+            "level": "INFO",
+            "class": "logging.FileHandler",
+            "filename": "info.log",
+            "formatter": "verbose",
         },
         "file": {
             "level": "WARNING",

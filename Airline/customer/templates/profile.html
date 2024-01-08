@@ -18,6 +18,10 @@ Email: {{ object.email }}
 </p>
 </div>
 <div><a href="{% url 'order_list' %}"><button>Your Orders </button></a></div>
+<div><a href="{% url 'profile_update' object.id %}"><button>Update Your Profile </button></a></div>
+<div><a href="{% url 'comment_list' %}"><button>Your Comments</button></a></div>
+
+
     
 
 
