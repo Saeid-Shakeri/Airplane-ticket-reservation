@@ -1,36 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Flight Detail</title>
-    {% load static %} 
-    <link rel="stylesheet" href="../../static/css/styles.css">
-</head>
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="../../static/css/styles.css">
+
+{% endblock head %}
+
+{% block content %}
+
 <body id="large">
-<p>Way: {{ object.way }}</p>
-<p>Date: {{ object.date|date:"y/m/d" }}</p>
-<p>time: {{ object.time }}</p>
-<p>price per ticket: {{ object.price }}$</p>
-<p>Cancellation penalty percentage: {{object.cancel_percent}}%</p>
-{% if object.remining == 0 %}
-    <p> no ticket remining</p>
-{% else %}
-    <p>remaining: {{object.remaining}}</p>
-{% endif %}
+    <p>Way: {{ object.way }}</p>
+    <p>Date: {{ object.date|date:"y/m/d" }}</p>
+    <p>Time: {{ object.time }}</p>
+    <p>Price per ticket: {{ object.price }}$</p>
+    <p>Cancellation penalty percentage: {{object.cancel_percent}}%</p>
+    {% if object.remining == 0 %}
+        <p> no ticket remining</p>
+    {% else %}
+        <p>Remaining: {{object.remaining}}</p>
+    {% endif %}
+    
+    <p>Airplane: {{object.airplane}}</p>
+    <p>AirLine: <a href="{% url 'airline_detail' object.airplane.airline.id %}">{{ object.airplane.airline }} </a></p>
+    <p><img src=" {{object.airplane.airline.logo.url}}" </p>
+    <a href="{% url 'ticket' object.id %}">
+        <input type="submit" value="Book Ticket" id="halfinput"> </a>
+    
+    </body>
 
-<p>Airplane: {{object.airplane}}</p>
-<p>AirLine: <a href="{% url 'airline_detail' object.airplane.airline.id %}">{{ object.airplane.airline }} </a></p>
-<p><img src=" {{object.airplane.airline.logo.url}}" </p>
-
-
-
-<a href="{% url 'ticket' object.id %}">
-    <button type="submit" >Book Ticket</button> </a>
-
-
-
-
-
-
-</body>
-</html>
+{% endblock content %}

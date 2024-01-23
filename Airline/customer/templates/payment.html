@@ -1,22 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<p>{{ user.username }}</p>
-<p>{{ user.phone }}</p>
-<p>{{ user.first_name }}</p>
-<p>{{ user.last_name }}</p>
-<p>{{ ticket.date_time}}</p>
-<p>{{ ticket.status}}</p>
-<p>{{ ticket.ticket}}</p>
+{% block head %}
+
+<title>Profile</title>
+{% load static %} 
+<link rel="stylesheet" href="../../../../static/css/styles.css">
+{% endblock head %}
+
+{% block content %}
+<body id="large">
+
+<p>Customer Username: {{ user.username }}</p>
+<p>Phone Number: {{ user.phone }}</p>
+<p>Customer First name: {{ user.first_name }}</p>
+<p>Customer Last name: {{ user.last_name }}</p>
+<p>Date and Time:{{ ticket.date_time}}</p>
+<p>Status: {{ ticket.status}}</p>
+<p>Id and Seat number: {{ ticket.ticket}}</p>
 {% if value != "-1" %}
-<p>price which back to you: {{value}}
+<p>Amount which back to you: {{value}}$
 {%endif%}
 
-
 </body>
-</html>
+{% endblock content %}

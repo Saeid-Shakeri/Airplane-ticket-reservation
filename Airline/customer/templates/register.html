@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Register</title>
-        {% load static %} 
-        <link rel="stylesheet" href="../../static/css/styles.css">
-        
-    <style>
-        
-        div {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 20px;
-          }
-          </style>
-    </head>
+{% extends "base.html" %}
+
+{% block head %}
+<title>Register</title>
+<style>
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  </style>
+{% endblock head %}
+
+{% block content %}
 <body>
     <div>
     <form action="" method="post" id="large">
@@ -25,5 +23,23 @@
 
     </form>
 </div>
+
+{% if status %}
+<div class="p-2">
+    {% if status == "success" %}
+        <div class="bg-green-500 text-white p-4 mb-2 rounded-md mt-4">
+            <h3 class="text-2xl font-bold">Success</h3>
+            <p>{{message}}</p>
+        </div>
+    {% endif %} 
+    {% if status == "fail" %}
+        <div class="bg-red-500 text-white p-4 rounded-md">
+            <h3 class="text-2xl font-bold">Signup failed</h3>
+            <p>{{message}}</p>
+        </div>
+    {% endif %} 
+</div>
+{% endif %}
 </body>
-</html>
+
+{% endblock content %}

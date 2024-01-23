@@ -1,31 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Search</title>
-    </head>
-<body>
-    <form action="" method="post">
-         {% csrf_token %}
-        {% if message == "" %}
-         <select id="id_customer" name="customer">
-           {% for x in ticket_list %}
-              <option value="{{ x }}">{{x}}</option>
-                
+{% extends "base.html" %}
 
-            {% endfor %}
-            </select>
-         {{ form.as_p }}
-         
-   
-      <input type="submit" value="Book">
-          
-    </form>
-    {{else}}
+{% block head %}
+<link rel="stylesheet" href="../../static/css/styles.css">
+
+<title>Ticket</title>
+{% endblock head %}
+
+{% block content %}
+
+<body id="large">
+  <form action="" method="post">
+       {% csrf_token %}
+      {% if message == "" %}
+      Chose Your Favorite Ticket :
+       <select id="id_customer" name="customer">
+        
+         {% for x in ticket_list %}
+            <option value="{{ x }}">{{x}}</option>
+              
+
+          {% endfor %}
+          </select>
+       {{ form.as_p }}
+       
+ 
+    <input type="submit" value="Book" id="medium">
+        
+  </form>
+  {% else %}
 {{message}}
-<div><p><a href="http://127.0.0.1:8000/customer/order"><button class="button3">Do You Want To Continue?
-</button> </a></p>
+<div id="main"><p><a href="http://127.0.0.1:8000/customer/order"><input class="button3" value="Do You Want To Continue? ">
+</a></p>
+
+<div id="main"><p><a href="http://127.0.0.1:8000/"><input class="button2" value="Back to Main Page">
+</a></p>
 {% endif %}
 
 </body>
-</html>
+{% endblock content %}

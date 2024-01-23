@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Order by Price</title>
-    {% load static %} 
-    <link rel="stylesheet" href="../../static/css/styles.css">
+{% extends "base.html" %}
 
-</head>
+{% block head %}
+<link rel="stylesheet" href="../../static/css/styles.css">
+<title>Order by Price</title>
+
+{% endblock head %}
+
+{% block content %}
+
 <body  id="large">
     
+    {% for t in flight_list %}
+        <p><a href="{% url 'flight_detail' t.id %}">{{ t.way }}-{{t.airplane.airline}}-{{ t.price }}$ </a></p>
+    {% endfor %}
+    
+    </body>
 
-{% for t in flight_list %}
-    <p><a href="{% url 'flight_detail' t.id %}">{{ t.way }}-{{t.airplane.airline}} </a></p>
-{% endfor %}
-
-
-</body>
-</html>
+{% endblock content %}

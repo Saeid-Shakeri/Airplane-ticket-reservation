@@ -7,3 +7,5 @@ admin.site.register(Ticket)
 admin.site.register(order)
 admin.site.register(Comment)
 admin.site.register(Operartor)
+admin.site.register(EmailConfirmation)
+

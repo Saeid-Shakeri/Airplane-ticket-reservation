@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Comment</title>
-    {% load static %} 
-    <link rel="stylesheet" href="../../static/css/styles.css">
-</head>
+{% extends "base.html" %}
+
+{% block head %}
+<title>Comment</title>
+{% load static %} 
+<link rel="stylesheet" href="../../static/css/styles.css">
+
+{% endblock head %}
+
+{% block content %}
+
 <body id="large">
-Title.............................Date&Time
+    Title.............................Date&Time
     {% for t in object_list %}
     <p><a href="{% url 'comment_detail' t.id %}">{{t.title}}.........{{t.date_time}} </a></p>
-{% endfor %}
-</body>
-</html>
+    {% endfor %}
+    </body>
+{% endblock content %}

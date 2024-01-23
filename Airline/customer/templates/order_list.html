@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Order</title>
-</head>
+{% extends "base.html" %}
+
+{% block head %}
+
+<title>Order</title>
+{% load static %} 
+<link rel="stylesheet" href="../../static/css/styles.css">
+{% endblock head %}
+
+{% block content %}
 <body>
     <p>Way ............................... Airplane...........................................
         Date...............id & seat number............status</p>
@@ -12,4 +16,4 @@
         ....................{{t.status}} </a></p>
 {% endfor %}
 </body>
-</html>
+{% endblock content %}

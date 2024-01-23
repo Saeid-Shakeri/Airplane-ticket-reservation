@@ -1,31 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Register</title>
-        {% load static %} 
-        <link rel="stylesheet" href="../../static/css/styles.css">
-        
+{% extends "base.html" %}
+
+  {% block head %}
+    <title>Register</title>
+    {% load static %} 
+    <link rel="stylesheet" href="../../static/css/styles.css">
+
     <style>
-        
-        div {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 20px;
+      div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
           }
-          </style>
-    </head>
-<body>
+    </style>
+  {% endblock head %}
+  {% block content %} 
+
     <div>
         <h1>Leave a comment</h1>
 
-    <form action="" method="post" id="large">
+     <form action="" method="post" id="large">
          {% csrf_token %}
          {{ form.as_p }}
    
-      <input type="submit" value="Save" id="large">
+      <input type="submit" value="Send!" id="large">
+      <input type="reset" value="Cancel" name="cancel" id="large"><br>
 
-    </form>
-</div>
-</body>
-</html>
+
+     </form>
+    </div>
+{% endblock content %}

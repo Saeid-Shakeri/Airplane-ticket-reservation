@@ -10,6 +10,13 @@ class Customer(AbstractUser):
     email = models.EmailField(max_length=50,blank=True)
 
 
+class EmailConfirmation(models.Model):
+    code  = models.TextField(max_length=100)
+    expires_on = models.DateTimeField()
+    user = models.OneToOneField(Customer, on_delete=models.CASCADE)
+    
+    def is_valid(self):
+        return timezone.now() < self.expires_on
 
 class Ticket(models.Model):
     seat_number = models.IntegerField()

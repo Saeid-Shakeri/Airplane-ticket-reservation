@@ -93,10 +93,29 @@ WSGI_APPLICATION = 'Airline.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+#DATABASES = {
+  #  'default': {
+   #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #    'NAME': 'airline',
+     #   'USER': 'postgres',
+      #  'PASSWORD': 'a123',
+       # 'HOST': 'localhost',
+        #'PORT': '5432',
+    #}
+#}
+
+#import sys
+#if 'test' in sys.argv:
+    #DATABASES['default'] = {
+      #  'ENGINE': 'django.db.backends.sqlite3',
+     #   'NAME': BASE_DIR / 'test_db.sqlite3',
+    
+    #}
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+   'default': {
+   'ENGINE': 'django.db.backends.sqlite3',
+   'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -161,17 +180,12 @@ LOGGING = {
             "class": "logging.StreamHandler",
         },
         "file": {
-            "level": "INFO",
+            "level": "DEBUG",
             "class": "logging.FileHandler",
             "filename": "info.log",
             "formatter": "verbose",
         },
-        "file": {
-            "level": "WARNING",
-            "class": "logging.FileHandler",
-            "filename": "warning.log",
-            "formatter": "verbose",
-        },
+       
         "mail_admins": {
             "level": "ERROR",
             "class": "django.utils.log.AdminEmailHandler",
@@ -196,13 +210,14 @@ LOGGING = {
 }
 
 
+isEmailConfirmation=True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.mail.yahoo.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 's29416475@gmail.com'
+EMAIL_HOST_PASSWORD = '91lmnop19'
 
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 

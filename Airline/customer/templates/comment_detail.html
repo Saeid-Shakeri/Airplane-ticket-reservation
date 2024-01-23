@@ -1,23 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Comment</title>
+{% extends "base.html" %}
+
+{% block head %}
+<title>Comment</title>
     {% load static %} 
     <link rel="stylesheet" href="../../../static/css/styles.css">
+{% endblock head %}
 
-</head>
-<body id="large">
-<p>Title: {{ object.title }}</p>
-<p>Datetime: {{ object.date_time }}</p>
-<p>Body: {{ object.body }}</p>
+{% block content %}
 
-<p></p>
-{% if object.reply != null  %}
-Reply From Us: <p>{{object.reply}}</p>
-{% endif %}
-
-
-
-</body>
-</html>
+   <body id="large">
+    <p>Title: {{ object.title }}</p>
+    <p>Datetime: {{ object.date_time }}</p>
+    <p>Body: {{ object.body }}</p>
+    
+    <p></p>
+    {% if object.reply != null  %}
+    Reply From Us: <p>{{object.reply}}</p>
+    {% endif %}
+    
+    
+    
+    </body>
+{% endblock content %}

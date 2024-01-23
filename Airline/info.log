@@ -1,0 +1,121 @@
+INFO 2024-01-08 18:22:40,481 views 3956 4024 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-08 18:22:44,180 views 3956 1412 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-08 18:28:20,337 views 3956 5844 user: ss1 is Paid his ticket. order id:21 
+INFO 2024-01-09 14:45:38,419 views 6828 2336 user: test123 is Paid his ticket. order id:25 
+INFO 2024-01-09 14:46:26,198 views 6828 2336 user: test123 is canceld his ticket. order id:25 
+INFO 2024-01-20 21:38:06,633 views 1952 9008 user: ss1 is Logged in.
+WARNING 2024-01-20 21:38:23,349 views 1952 6292 Ticket Not Found.
+INFO 2024-01-20 21:38:38,130 views 1952 7372 user: ss1 is Paid his ticket. order id:30 
+INFO 2024-01-20 21:38:44,662 views 1952 6780 user: ss1 is canceld his ticket. order id:30 
+INFO 2024-01-20 21:42:12,179 views 1156 7648 user: ss1 is Logged in.
+INFO 2024-01-20 21:44:09,157 views 6444 4528 user: ss1 is Logged in.
+WARNING 2024-01-20 21:51:00,918 views 7776 8652 Ticket Not Found.
+INFO 2024-01-21 07:55:06,494 views 1288 4716 user: ss1 is Logged in.
+INFO 2024-01-21 08:20:52,342 views 2476 7088 user: ss1 is Logged in.
+INFO 2024-01-21 09:21:59,520 views 1692 7008 user: ss1 is Logged in.
+INFO 2024-01-21 09:24:26,444 views 1692 5052 user: ss1 is Logged in.
+INFO 2024-01-21 09:26:38,745 views 6496 3628 user: ss1 is Logged in.
+INFO 2024-01-21 09:32:28,029 views 2312 4164 user: ss1 is Logged in.
+INFO 2024-01-21 09:33:52,094 views 7080 6232 user: ss1 is Logged in.
+INFO 2024-01-21 09:34:38,431 views 5320 6676 user: ss1 is Logged in.
+INFO 2024-01-21 09:34:40,221 views 5320 7080 user: ss1 is logged out.
+INFO 2024-01-21 09:35:35,770 views 5320 4224 user: ss1 is Logged in.
+INFO 2024-01-21 10:54:24,469 views 5332 5752 user: ss1 is Logged in.
+INFO 2024-01-21 10:56:13,248 views 5332 5752 user: ss1 is logged out.
+INFO 2024-01-21 10:56:21,550 views 5332 5752 user: ss1 is Logged in.
+INFO 2024-01-21 17:53:04,101 views 3392 4632 user: ss1 is Logged in.
+INFO 2024-01-21 20:33:14,875 views 5572 7052 user: ss1 is Logged in.
+INFO 2024-01-21 20:37:03,713 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:37:34,639 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:37:35,564 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:37:46,085 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:37:46,365 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:37:46,717 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:37:47,002 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:38:12,520 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:38:26,181 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:40:16,567 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:40:53,723 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:41:19,745 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:41:31,956 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-21 20:41:42,896 views 5572 7052 user: ss1 is Paid his ticket. order id:21 
+INFO 2024-01-21 20:41:51,127 views 5572 7052 user: ss1 is Paid his ticket. order id:21 
+INFO 2024-01-21 20:42:04,637 views 5572 7052 user: ss1 is canceld his ticket. order id:21 
+INFO 2024-01-22 01:12:28,564 views 8800 8424 user: ss1 is Logged in.
+INFO 2024-01-22 01:26:42,180 views 4200 6276 user: ss1 is Paid his ticket. order id:33 
+INFO 2024-01-22 01:26:56,968 views 4200 1908 user: ss1 is canceld his ticket. order id:33 
+INFO 2024-01-22 02:48:09,746 views 8748 9512 user: ss1 is Logged in.
+INFO 2024-01-22 03:11:57,521 views 8748 7404 user: ss1 is Paid his ticket. order id:34 
+WARNING 2024-01-22 03:18:10,963 views 8748 7404 Ticket Not Found.
+WARNING 2024-01-22 03:18:51,014 views 8748 7404 Ticket Not Found.
+WARNING 2024-01-22 03:18:57,495 views 8748 7404 Ticket Not Found.
+WARNING 2024-01-22 03:20:52,494 views 8748 7404 Ticket Not Found.
+WARNING 2024-01-22 03:23:22,426 views 8748 7404 Ticket Not Found.
+WARNING 2024-01-22 03:23:27,355 views 8748 7404 Ticket Not Found.
+WARNING 2024-01-22 03:24:36,280 views 8748 7404 Ticket Not Found.
+WARNING 2024-01-22 03:25:35,069 views 8748 7404 Ticket Not Found.
+WARNING 2024-01-22 03:25:37,698 views 8748 7404 Ticket Not Found.
+INFO 2024-01-22 15:37:44,496 views 7120 7016 user: ss1 is Logged in.
+INFO 2024-01-22 15:44:42,602 views 7120 7016 user: ss1 is logged out.
+INFO 2024-01-22 15:51:50,043 views 7120 7016 user: ss1 is Logged in.
+INFO 2024-01-22 15:55:53,454 views 4060 2408 user: ss1 is logged out.
+INFO 2024-01-22 16:48:37,413 views 4408 7444 user: ss1 is Logged in.
+INFO 2024-01-22 17:04:24,462 views 7180 7232 user: ss1 is logged out.
+INFO 2024-01-22 17:05:15,866 views 7180 7232 user: ss1 is Logged in.
+ERROR 2024-01-22 17:28:25,805 views 9124 3312 No codes in url
+ERROR 2024-01-22 17:28:25,805 views 9124 3312 name 'timezone' is not defined
+ERROR 2024-01-22 17:31:13,458 views 6536 2824 No codes in url
+ERROR 2024-01-22 17:31:13,463 views 6536 2824 name 'timezone' is not defined
+ERROR 2024-01-22 17:32:45,828 views 6536 7128 No codes in url
+ERROR 2024-01-22 17:32:45,828 views 6536 7128 name 'timezone' is not defined
+ERROR 2024-01-22 18:03:20,906 views 8796 5400 No codes in url
+ERROR 2024-01-22 18:04:48,040 views 1536 6616 No codes in url
+INFO 2024-01-22 18:14:45,747 views 1536 9080 user: ss1 is Logged in.
+ERROR 2024-01-22 18:14:49,395 views 1536 8976 No codes in url
+ERROR 2024-01-22 20:31:01,519 views 5988 5124 No codes in url
+INFO 2024-01-22 20:31:11,667 views 5988 5124 user: ss1 is Logged in.
+ERROR 2024-01-22 20:31:13,557 views 5988 5124 No codes in url
+INFO 2024-01-22 20:53:20,052 views 3280 1564 user: ss1 is logged out.
+INFO 2024-01-22 20:54:07,850 views 3280 7068 user: AnonymousUser is registered.
+INFO 2024-01-22 20:59:42,778 views 5628 1180 user: test1 is registered.
+ERROR 2024-01-22 20:59:57,139 views 5628 1180 [Errno 11004] getaddrinfo failed
+INFO 2024-01-22 21:00:36,883 views 5628 5800 user: test1 is registered.
+ERROR 2024-01-22 21:00:45,389 views 5628 5800 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials r7-20020a05600c35c700b0040d1bd0e716sm40095482wmq.9 - gsmtp')
+INFO 2024-01-22 21:02:58,569 views 5992 6788 user: test1 is registered.
+ERROR 2024-01-22 21:03:00,889 views 5992 6788 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials q6-20020a5d6586000000b0033921f48044sm8948788wru.55 - gsmtp')
+INFO 2024-01-22 21:04:24,839 views 5924 3552 user: test1 is registered.
+ERROR 2024-01-22 21:04:27,326 views 5924 3552 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials r20-20020a05600c35d400b0040d8eca092esm43805216wmq.47 - gsmtp')
+INFO 2024-01-22 21:05:16,990 views 5924 3028 user: test1 is registered.
+ERROR 2024-01-22 21:05:19,310 views 5924 3028 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a16-20020a056000101000b00337cd6b1890sm11797161wrx.80 - gsmtp')
+INFO 2024-01-22 21:08:04,477 views 5924 1168 user: test1 is registered.
+ERROR 2024-01-22 21:08:16,157 views 5924 1168 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials z10-20020a05600c0a0a00b0040e4bcfd826sm40531519wmp.47 - gsmtp')
+INFO 2024-01-22 21:10:22,590 views 6584 4468 user: test1 is registered.
+ERROR 2024-01-22 21:10:25,104 views 6584 4468 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials m35-20020a05600c3b2300b0040e541ddcb1sm39943810wms.33 - gsmtp')
+ERROR 2024-01-22 21:14:56,438 views 520 6884 No codes in url
+INFO 2024-01-22 21:21:08,588 views 6248 2384 user: AnonymousUser is registered.
+ERROR 2024-01-22 21:21:24,475 views 6248 2384 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials h10-20020adff4ca000000b0033925aa222dsm7368661wrp.57 - gsmtp')
+ERROR 2024-01-22 21:23:28,775 views 6248 5888 No codes in url
+ERROR 2024-01-22 21:33:37,198 views 6248 3232 list index out of range
+ERROR 2024-01-22 21:33:46,809 views 6248 4268 No codes in url
+INFO 2024-01-22 21:45:51,790 views 2748 3816 user: AnonymousUser is registered.
+INFO 2024-01-22 21:45:52,580 views 2748 3816 Email verification send successfully to dark23
+ERROR 2024-01-22 21:45:55,797 views 2748 3816 No codes in url
+INFO 2024-01-22 21:48:56,335 views 3448 3232 user: AnonymousUser is registered.
+INFO 2024-01-22 21:48:57,246 views 3448 3232 Email verification send successfully to wefde
+INFO 2024-01-22 21:49:28,488 views 3448 6536 user: AnonymousUser is registered.
+ERROR 2024-01-22 21:49:36,006 views 3448 6536 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials b7-20020a5d45c7000000b003392e798899sm4871668wrs.35 - gsmtp')
+INFO 2024-01-22 22:03:14,186 views 6592 6128 user: AnonymousUser is registered.
+ERROR 2024-01-22 22:03:17,880 views 6592 6128 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials e15-20020a5d530f000000b003391720fa51sm9374715wrv.60 - gsmtp')
+INFO 2024-01-22 22:08:54,168 views 6592 3884 user: AnonymousUser is registered.
+ERROR 2024-01-22 22:09:01,002 views 6592 3884 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials m10-20020adffa0a000000b003392172fd60sm9240297wrr.51 - gsmtp')
+ERROR 2024-01-22 22:09:14,225 views 6592 5204 No codes in url
+INFO 2024-01-22 22:13:01,491 views 2968 7056 user: AnonymousUser is registered.
+ERROR 2024-01-22 22:13:03,336 views 2968 7056 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials p12-20020adfce0c000000b0033865f08f2asm9577260wrn.34 - gsmtp')
+ERROR 2024-01-22 22:13:17,655 views 2968 1136 No codes in url
+INFO 2024-01-22 22:14:13,210 views 1864 1660 user: AnonymousUser is registered.
+ERROR 2024-01-22 22:14:25,816 views 1864 1660 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials w25-20020a17090633d900b00a28479fcb8esm13661832eja.103 - gsmtp')
+ERROR 2024-01-22 22:17:53,329 views 1864 6960 No codes in url
+INFO 2024-01-22 22:21:37,551 views 6508 3200 user: AnonymousUser is registered.
+ERROR 2024-01-22 22:22:03,140 views 6508 3200 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials f7-20020a05600c4e8700b0040e89ade92fsm19334840wmq.14 - gsmtp')
+INFO 2024-01-22 22:24:03,267 views 6508 5876 user: AnonymousUser is registered.
+ERROR 2024-01-22 22:24:05,522 views 6508 5876 (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a11-20020adfe5cb000000b00337d92e8b9csm10275992wrn.109 - gsmtp')

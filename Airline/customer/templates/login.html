@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
+{% extends "base.html" %}
+
+{% block head %}
+<title>Login</title>
     {% load static %} 
     <link rel="stylesheet" href="../../static/css/styles.css">
 
@@ -14,7 +13,10 @@ div {
     padding: 20px;
   }
   </style>
-</head>
+{% endblock head %}
+
+{% block content %}
+
 <body>
     <div>
     <form action="" method="post" id="large">
@@ -28,7 +30,8 @@ div {
         <p><input type="submit" value="Login" id="large" > </p>
         <p>Dont have an account? <a href="{% url 'register' %}">Create One</a> </p>
         <p>{{ message }}</p>
-</form>
+        </form>
     </div>
 </body>
-</html>
+
+{% endblock content %}

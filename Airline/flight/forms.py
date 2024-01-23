@@ -9,6 +9,10 @@ class SearchFrom(forms.ModelForm):
         model = Flight
         fields = ["way", "date"]
 
+    def __init__(self, *args, **kwargs):
+        super(SearchFrom, self).__init__(*args, **kwargs)
+        self.fields['way'].queryset = self.fields['way'].queryset.order_by('origion')
+
 
 class TicketForm(forms.ModelForm):
 
