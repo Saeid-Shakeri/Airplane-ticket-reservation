@@ -94,30 +94,17 @@ WSGI_APPLICATION = 'Airline.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-#DATABASES = {
-  #  'default': {
-   #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #    'NAME': 'airline',
-     #   'USER': 'postgres',
-      #  'PASSWORD': 'a123',
-       # 'HOST': 'localhost',
-        #'PORT': '5432',
-    #}
-#}
-
-#import sys
-#if 'test' in sys.argv:
-    #DATABASES['default'] = {
-      #  'ENGINE': 'django.db.backends.sqlite3',
-     #   'NAME': BASE_DIR / 'test_db.sqlite3',
-    
-    #}
 DATABASES = {
-   'default': {
-   'ENGINE': 'django.db.backends.sqlite3',
-   'NAME': BASE_DIR / 'db.sqlite3',
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'airline_db',
+        'USER': 'airlinr_user',
+        'PASSWORD': '12345678',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
