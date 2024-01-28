@@ -14,6 +14,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.core.mail import send_mail
 import uuid
 from Airline.settings import isEmailConfirmation
+import requests
 
 from django.template.loader import render_to_string
 from django.utils import timezone
@@ -23,6 +24,11 @@ from datetime import datetime, timedelta
 
 
 logger = logging.getLogger(__name__)
+
+
+
+
+
 
 
 
@@ -97,8 +103,9 @@ class register(View):
                 return sendConfirmationEmail(request, form, user, "register.html", False, None)
             if user:
                 login(request, user)
-                template = loader.get_template('profile.html')
-                return HttpResponse(template.render({'object':user}, request))    
+               # template = loader.get_template('profile.html')
+               # return render(request,'profile.html',{'object':user})   
+                return redirect('profile') 
         else:
             return render(request, "register.html", {"form": form})
 
@@ -127,7 +134,78 @@ class Login(View):
             return HttpResponse(template.render({'message': message}, request))
 
 
+def compare(request):
+    try :
+        if request.method == "POST":
+            
+            applicationKey = "eaf6023a-bf1c-4ab1-bec6-a4d9298e9532"
+            applicationSecret = "RY/3kMjrb0OOjM7LyYTpiA=="
+            toNumber = '+989199308071'
+            code = request.POST.get("code")
+            sinchVerificationUrl = "https://verification.api.sinch.com/verification/v1/verifications/number/" + toNumber
 
+            payload = {
+                 "method": "sms",
+                 "sms": {
+                 "code": code
+                }       
+              }
+            headers = {"Content-Type": "application/json"}
+            response = requests.put(sinchVerificationUrl, json=payload, headers=headers, auth=(applicationKey, applicationSecret))
+            if 200 == response.status_code or response.status_code == 201:
+                phone = request.POST.get("phone")
+                code = request.POST.get("code")
+                p = phone[3:]
+                p = '0' + p
+                u = Customer.objects.get(phone=p)
+                if u:
+                   login(request, u)
+                   logger.info(f'user: {request.user} is Logged in.')
+                   return redirect('profile')
+                else:
+                      return HttpResponse("Something went wrong")
+
+    except Exception as e :
+        logger.error(str(e))
+        
+        return HttpResponse('Something went wrong')
+
+
+
+
+
+
+class LoginWithPhone(View):
+    def get(self, request):
+        template = loader.get_template('login_phone.html')
+        flag =True
+        return HttpResponse(template.render({'flag':flag}, request))
+
+    def post(self, request, *args, **kwargs):
+        phone = request.POST.get("phone")
+        phone = '+98' + phone
+
+        applicationKey = "eaf6023a-bf1c-4ab1-bec6-a4d9298e9532"
+        applicationSecret = "RY/3kMjrb0OOjM7LyYTpiA=="
+        toNumber = phone    
+        sinchVerificationUrl = "https://verification.api.sinch.com/verification/v1/verifications"
+        payload = {
+            "identity": {
+            "type": "number",
+            "endpoint": toNumber
+            },
+            "method": "sms"
+        }
+
+        headers = {"Content-Type": "application/json"}
+
+        response = requests.post(sinchVerificationUrl, json=payload, headers=headers, auth=(applicationKey, applicationSecret))
+        #data = response.json()
+        template = loader.get_template('login_phone.html')
+        flag = False
+        return HttpResponse(template.render({'phone':phone, 'flag':flag}, request))
+
+           
 
 
 class Profile(LoginRequiredMixin,View):

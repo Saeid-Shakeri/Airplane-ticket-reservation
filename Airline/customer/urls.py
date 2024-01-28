@@ -16,6 +16,8 @@ urlpatterns = [
         path('comment/',views.CommentView.as_view(),name="comment"),
         path('editpassword/', views.change_password, name='change_password'),
         path('confirmation/', views.confirmationView, name='confirmation'),
+        path('login_with_phone/', views.LoginWithPhone.as_view(), name='login_with_phone'),
+        path('login_with_phone/compare/', views.compare, name='compare'),
 
 
 

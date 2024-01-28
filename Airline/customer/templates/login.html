@@ -17,21 +17,20 @@ div {
 
 {% block content %}
 
-<body>
     <div>
-    <form action="" method="post" id="large">
-        {% csrf_token %}
-        <label for="fname">Username:</label>
-        <input type="text" id="fname" name="username" placeholder="Your Username...">
-        <p></p>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Your Password...">
+        <form action="" method="post" id="large">
+            {% csrf_token %}
+            <label for="fname">Username:</label>
+            <input type="text" id="fname" name="username" placeholder="Your Username...">
+            <p></p>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Your Password...">
 
-        <p><input type="submit" value="Login" id="large" > </p>
-        <p>Dont have an account? <a href="{% url 'register' %}">Create One</a> </p>
-        <p>{{ message }}</p>
+            <p><input type="submit" value="Login" id="large" > </p>
+            <p>Dont have an account? <a href="{% url 'register' %}">Create One</a> </p>
+            <p>{{ message }}</p>
+            <p>Do you want to Login with your Phone Number? <a href="{% url 'login_with_phone' %}">Login</a> </p>
         </form>
     </div>
-</body>
 
 {% endblock content %}
