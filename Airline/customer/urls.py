@@ -20,9 +20,6 @@ urlpatterns = [
         path('login_with_phone/compare/', views.compare, name='compare'),
 
 
-
-
-
     
 ]
 

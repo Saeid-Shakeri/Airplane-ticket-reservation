@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import UserForm,CommentForm,UserProfileForm
 from django.template import loader
@@ -15,23 +15,12 @@ from django.core.mail import send_mail
 import uuid
 from Airline.settings import isEmailConfirmation
 import requests
-
 from django.template.loader import render_to_string
 from django.utils import timezone
 from datetime import datetime, timedelta
 
 
-
-
 logger = logging.getLogger(__name__)
-
-
-
-
-
-
-
-
 
 
 def sendConfirmationEmail(req, form, user, renderHtml, sendAgain, againMessage):
@@ -167,11 +156,7 @@ def compare(request):
 
     except Exception as e :
         logger.error(str(e))
-        
         return HttpResponse('Something went wrong')
-
-
-
 
 
 
@@ -182,29 +167,33 @@ class LoginWithPhone(View):
         return HttpResponse(template.render({'flag':flag}, request))
 
     def post(self, request, *args, **kwargs):
-        phone = request.POST.get("phone")
-        phone = '+98' + phone
+        try:
+            phone = request.POST.get("phone")
+            phone = '+98' + phone
+            applicationKey = "eaf6023a-bf1c-4ab1-bec6-a4d9298e9532"
+            applicationSecret = "RY/3kMjrb0OOjM7LyYTpiA=="
+            toNumber = phone    
+            sinchVerificationUrl = "https://verification.api.sinch.com/verification/v1/verifications"
+            payload = {
+                "identity": {
+                "type": "number",
+                "endpoint": toNumber
+                },
+                "method": "sms"
+            }
 
-        applicationKey = "eaf6023a-bf1c-4ab1-bec6-a4d9298e9532"
-        applicationSecret = "RY/3kMjrb0OOjM7LyYTpiA=="
-        toNumber = phone    
-        sinchVerificationUrl = "https://verification.api.sinch.com/verification/v1/verifications"
-        payload = {
-            "identity": {
-            "type": "number",
-            "endpoint": toNumber
-            },
-            "method": "sms"
-        }
-
-        headers = {"Content-Type": "application/json"}
-
-        response = requests.post(sinchVerificationUrl, json=payload, headers=headers, auth=(applicationKey, applicationSecret))
+            headers = {"Content-Type": "application/json"}
+            response = requests.post(sinchVerificationUrl, json=payload, headers=headers, auth=(applicationKey, applicationSecret))
         #data = response.json()
-        template = loader.get_template('login_phone.html')
-        flag = False
-        return HttpResponse(template.render({'phone':phone, 'flag':flag}, request))
-
+            template = loader.get_template('login_phone.html')
+            flag = False
+            return HttpResponse(template.render({'phone':phone, 'flag':flag}, request))
+     
+    
+        except Exception as e :
+            logger.error(str(e))
+            return HttpResponse('Something went wrong')
+ 
            
 
 

@@ -9,26 +9,26 @@
 {% endblock head %}
 
 {% block content %}
-<body>
     <div>
-<p>Username: {{ object.username }}</p>
-<p>Phone: {{ object.phone }}</p>
-<p>First name: {{ object.first_name }}</p>
-<p>Last name: {{ object.last_name }}</p>
-<p>Email: {{ object.email }}
+        <p>Username: {{ object.username }}</p>
+        <p>Phone: {{ object.phone }}</p>
+        <p>First name: {{ object.first_name }}</p>
+        <p>Last name: {{ object.last_name }}</p>
+        <p>Email: {{ object.email }}
 
-</div>
-<div id="main">
-<div><a href="{% url 'order_list' %}"><input type="submit" value="Your Orders"></a></div>
-<div><a href="{% url 'comment_list' %}"><input type="submit" value="Your comments"></a></div>
-<div><a href="{% url 'edit_profile' object.id %}"><input type="submit" value="Update Your Profile"></a></div>
+    </div>
+    <div id="main">
+        <div><a href="{% url 'order_list' %}"><input type="submit" value="Your Orders"></a></div>
+        <div><a href="{% url 'comment_list' %}"><input type="submit" value="Your comments"></a></div>
+        <div><a href="{% url 'edit_profile' object.id %}"><input type="submit" value="Update Your Profile"></a>
+    </div>
 
-<div><a href="{% url 'change_password' %}"><input type="submit" value="Change your password"></a></div>
-<form action="" method="post">
-    {% csrf_token %}
-    <input id="logout" type="submit" value="Logout">
-</form>
+    <div><a href="{% url 'change_password' %}"><input type="submit" value="Change your password"></a>
+    </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input id="logout" type="submit" value="Logout">
+        </form>
 </div>
-</body>
 
 {% endblock content %}
