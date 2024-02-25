@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+<title>Order</title>
+{% load static %} 
+<link rel="stylesheet" href="../../static/css/styles.css">
+{% endblock head %}
+
+{% block content %}
+<body>
+    <p>Way ............................... Airplane...........................................
+        Date...............id & seat number............status</p>
+    {% for t in object_list %}
+    <p><a href="{% url 'order_detail' t.id %}">{{t.ticket.fly}}...................{{ t.ticket }}
+        ....................{{t.status}} </a></p>
+{% endfor %}
+</body>
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+<title>Update Profile</title>
+{% load static %} 
+<link rel="stylesheet" href="../../../static/css/styles.css">
+
+<style>
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  </style>
+{% endblock head %}
+
+{% block content %}
+<body>
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}    
+            <p>Phone Number: {{ userprofile_form.phone }}</p>
+            <p>First name: {{ userprofile_form.first_name }}</p>
+            <p>Last name: {{ userprofile_form.last_name }}</p>
+            <p>Username: {{ userprofile_form.username }}</p>
+            <p>Email: {{ userprofile_form.email }}  </p> 
+            <input type="submit" value="Save Changes" name="save" /><br>
+            <input type="reset" value="Cancel" name="cancel" /><br>
+            <br/>
+        </form>
+    </div>
+</body>
+{% endblock content %}

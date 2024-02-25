@@ -50,6 +50,7 @@ STATICFILES_DIRS = [
 ]
 
 
+LOGIN_URL = 'login'
 
 
 
@@ -92,24 +93,30 @@ WSGI_APPLICATION = 'Airline.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'airline_db',
+        'USER': 'airlinr_user',
+        'PASSWORD': '12345678',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
+#    {
+     #   'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+   # },
+   # {
+      #  'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+   # },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
@@ -144,3 +151,62 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "customer.Customer"
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+        "file": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": "info.log",
+            "formatter": "verbose",
+        },
+       
+        "mail_admins": {
+            "level": "ERROR",
+            "class": "django.utils.log.AdminEmailHandler",
+        },
+    },
+    "loggers":{
+        "customer.views":{
+            "handlers": ["file"],
+            "level": "DEBUG",
+        },
+        "flight.views":{
+            "handlers": ["file"],
+            "level": "DEBUG",
+        },
+        "file_logger":{
+            "handlers": ["file"],
+        },
+        "email_logger":{
+            "handlers": ["mail_admins"],
+        }
+    }
+}
+
+
+isEmailConfirmation=True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 's29416475@gmail.com'
+EMAIL_HOST_PASSWORD = '91lmnop19'
+
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
+
+SESSION_COOKIE_AGE = 3600
+

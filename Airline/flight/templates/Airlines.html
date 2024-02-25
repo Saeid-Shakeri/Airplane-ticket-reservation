@@ -16,8 +16,9 @@
     {% for t in all_airlines %}
     
      
-     <li><figure><img src=" {{t.Logo.url}}" width="200" height="200" >
-        <figcaption align="center">{{t.name}}</figcaption>
+     <li><figure><img src=" {{t.logo.url}}" width="200" height="200" >
+        <figcaption align="center"> 
+            <a href="{% url 'airline_detail' t.id %}">{{ t.name }} </a></figcaption>
         </figure></li>
      
    

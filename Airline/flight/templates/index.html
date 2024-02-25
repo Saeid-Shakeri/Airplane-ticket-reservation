@@ -1,27 +1,28 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>index page</title>
-</head>
-<body>
-    
-{% for t in all_flights %}
+{% extends "base.html" %}
 
-    <p> {{t.id}}))   {{ t.way }}....... Airplane:  {{t.airplane}}....... Airline: {{t.airplane.airline}} </p>
-    <p>....... Seats: {{t.seats}}....... remaining: {{t.remaining}}
-          
-        
-        
+{% block head %}
+<link rel="stylesheet" href="../static/css/styles.css">
+<title>index page</title>
 
-        {% if t.airplane.airline.Logo %}
-        
-<p></p>
-            <img src= " {{t.airplane.airline.Logo.url}}">
+{% endblock head %}
 
-          {% endif %}
-    </p>
-    
-{% endfor %}
+{% block content %}
 
-</body>
-</html>
+
+<div id="main">
+    <div>    <p><a href="{% url 'flight_list' %}"><input type="submit" value="Flights"></a></p> 
+     </div>
+    <div><p><a href="{% url 'search' %}"><input type="submit" value="Search by"></a></p>
+    </div>
+    <div><p><a href="http://127.0.0.1:8000/customer/"><input type="submit" value="Profile"> </a></p>
+    </div>
+
+
+    </div>
+    <div id="main"><p><a href="http://127.0.0.1:8000/customer/comment/"><input type="submit" value="Contact Us"></a></p>  
+    </div>
+    <div id="main"><p><a href="http://127.0.0.1:8000/airlines/"><input type="submit" value="AirLines"></a></p>  
+    </div>
+
+
+{% endblock content %}

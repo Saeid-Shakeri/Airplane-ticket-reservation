@@ -23,7 +23,7 @@ class list_of_flights(models.Model):
 
 # View
 def target_view(request):
-    q =  Flight.objects.filter(date__gt=timezone.now())
+    q =  Flight.objects.all()
 
     template = loader.get_template("list_of_flights.html")
    

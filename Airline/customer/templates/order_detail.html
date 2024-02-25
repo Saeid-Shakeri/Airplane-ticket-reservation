@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Title</title>
+{% load static %} 
+<link rel="stylesheet" href="../../../static/css/styles.css">
+<script src="../../../static/js/scripts.js"></script>
+
+{% endblock head %}
+
+{% block content %}
+<body id="large">
+<p> {{ object.ticket }}</p>
+<p>Datetime: {{ object.date_time|date:"y/m/d" }}</p>
+<p>Number: {{ object.number }}</p>
+
+<p>Status: {{object.status}}</p>
+<p>Price: {{object.ticket.fly.price}}</p>
+
+          {% if object.status == "check" %}
+          
+            <a href="{% url 'payment' object.id %}">
+                    <input type="submit" value="Pay" id="large"> </a>
+          {% elif object.status == "paid" %}
+
+          <a href="{% url 'cancel' object.id %}" onclick="return deletechecked();">
+            <input type="submit" value="Cancel" id="large"> </a>   
+            {% elif object.status == "canceld" %}
+
+            <p> Cancel percent: {{ object.ticket.fly.cancel_percent}}</p>
+            
+            <a href="{% url 'payment' object.id %}">
+              <input type="submit" value="Pay" id="large"> </a>
+
+          {% endif %}
+</body>
+{% endblock content %}

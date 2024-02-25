@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Comment</title>
+    {% load static %} 
+    <link rel="stylesheet" href="../../../static/css/styles.css">
+{% endblock head %}
+
+{% block content %}
+
+   <body id="large">
+    <p>Title: {{ object.title }}</p>
+    <p>Datetime: {{ object.date_time }}</p>
+    <p>Body: {{ object.body }}</p>
+    
+    <p></p>
+    {% if object.reply != null  %}
+    Reply From Us: <p>{{object.reply}}</p>
+    {% endif %}
+    
+    
+    
+    </body>
+{% endblock content %}

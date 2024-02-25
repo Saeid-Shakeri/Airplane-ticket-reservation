@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="../../static/css/styles.css">
+
+{% endblock head %}
+
+{% block content %}
+
+<p>Name: {{ object.name }}</p>
+<p>Phone: {{ object.phone }}</p>
+<p><img src=" {{object.logo.url}}" ></p>
+
+{% endblock content %}
+

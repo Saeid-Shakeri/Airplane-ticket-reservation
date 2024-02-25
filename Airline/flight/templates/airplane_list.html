@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="../../static/css/styles.css">
+
+{% endblock head %}
+
+{% block content %}
+
+{% for t in object %}
+
+
+<p><a href="{% url 'airplane_detail' t.id %}">{{ t.name }} </a></p>
+{%endfor%}
+
+{% endblock content %}
+

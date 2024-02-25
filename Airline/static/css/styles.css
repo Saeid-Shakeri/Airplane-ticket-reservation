@@ -1,12 +1,143 @@
+#smal{
+    font-size: 10px;
 
-    ul li{
-        display:inline-block;
-        font-size: x-large;
 }
-.img-with-text {
-    text-align: justify;
-    width: [width of img];
+
+#medium{
+    font-size: 16px;
 }
+
+#large{
+    font-size: 25px;
+}
+
+a:link {
+    color: rgb(37, 114, 165);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: rgb(26, 131, 108);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgb(31, 182, 174);
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+
+
+
+#main {
+ 
+    display: flex;
+    justify-content: space-between;
+  }
+
+  option{
+    width: 100%;
+
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+  }
+
+  input[type=text], select {
+    width: 100%;
+
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+  }
+
+  
+  input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  
+  input[type=password], select {
+    width: 100%;
+
+
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    box-shadow: 0 3px 5px 0 gray;
+    background-color: rgb(46, 148, 51);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  
+  #halfinput[type=submit] {
+    width: 50%;
+    box-shadow: 0 3px 5px 0 gray;
+    background-color: rgb(46, 148, 51);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=reset] {
+    width: 100%;
+    box-shadow: 0 3px 5px 0 gray;
+    background-color: #96327d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+ 
+  
+  input[type=submit]:hover {
+    width: 100%;
+
+    background-color: #204121;
+  }
 
 
 button {
@@ -23,3 +154,71 @@ box-shadow: 0 9px #999;
 border-radius: 15px;
 font-size: 20px;
 }
+
+
+
+.button1 {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 100px 100px;
+  cursor: pointer;
+  box-shadow: 0 9px #999;
+  border-radius: 15px;
+  font-size: 20px;
+  }
+
+
+
+  .button2 {
+    width: 50%;
+    box-shadow: 0 3px 5px 0 gray;
+    background-color: rgb(58, 111, 136);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+
+    .button3 {
+      width: 50%;
+      box-shadow: 0 3px 5px 0 gray;
+
+      background-color: #d3692c; /* Green */
+      border: none;
+      color: rgb(240, 217, 217);
+      padding: 14px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 100px 100px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      }
+  
+
+      header{
+        width: 100%;
+        margin: 0;
+        background-color: rgb(6, 64, 97);
+    }
+
+
+
+    .secondry-logo{
+      max-width: 8px;
+      max-height: 8px;
+      width: 2%;
+      float: left;
+      margin: 1px;
+      vertical-align: top;
+  }
